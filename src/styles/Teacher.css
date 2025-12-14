@@ -277,4 +277,33 @@
   .teacher-experience-period {
     white-space: normal;
   }
-}
+
+@media (max-width: 430px) {
+   .teacher-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .teacher-title {
+    font-size: 2rem;
+  }
+
+  .teacher-photo {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .teacher-name {
+    font-size: 1.5rem;
+  }
+
+  .teacher-experience {
+    padding: 1rem;
+  }
+
+  .teacher-experience-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .teacher-experience-period {
+    white-space: normal;
+  }

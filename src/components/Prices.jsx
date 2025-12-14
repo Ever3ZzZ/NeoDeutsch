@@ -78,12 +78,12 @@ export default function Prices() {
         {/* Цены */}
         <div className="pricing-amount-container">
           <div className="pricing-amount-old">7000 грн</div>
-          <div className="pricing-amount-adult">6500 грн</div>
+          <div className="pricing-amount-adult">6499 грн</div>
         </div>
 
         {/* Бейдж скидки */}
         <div className="pricing-discount-badge pricing-discount-badge-adult">
-          Знижка 500 грн!
+          Знижка 501 грн!
         </div>
 
         <p className="pricing-period">за курс</p>

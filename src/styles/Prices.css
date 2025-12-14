@@ -255,3 +255,116 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ---------- iPhone X – 14 Pro Max (<= 430px) ---------- */
+@media (max-width: 430px) {
+  .pricing-grid {
+    gap: 1rem;
+    padding: 0 12px;              /* чтобы не прилипало к краям */
+    max-width: 100%;
+  }
+
+  .pricing-card {
+    padding: 1.35rem 1rem;        /* было 2.5rem */
+    border-radius: 0.9rem;
+  }
+
+  .pricing-badge {
+    font-size: 0.78rem;
+    padding: 0.45rem 1rem;
+    top: -0.65rem;
+  }
+
+  .pricing-title-student,
+  .pricing-title-adult {
+    font-size: 1.45rem;           /* было 1.875rem */
+    margin-top: 0.8rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .pricing-description {
+    font-size: 0.82rem;
+    margin-bottom: 1.1rem;
+    min-height: 0;                /* чтобы не держало пустоту */
+  }
+
+  .pricing-requirement,
+  .pricing-requirement-adult {
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-amount-container {
+    gap: 0.35rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .pricing-amount-old {
+    font-size: 1.35rem;
+  }
+
+  .pricing-amount-old::after {
+    right: -1.4rem;               /* меньше, чтобы не вылезало */
+    font-size: 1.2rem;
+  }
+
+  .pricing-amount-student,
+  .pricing-amount-adult {
+    font-size: 2.6rem;            /* было 3.75rem */
+    line-height: 1.05;
+  }
+
+  .pricing-discount-badge,
+  .pricing-discount-badge-adult {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .pricing-period {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .pricing-features {
+    padding: 1rem;                /* было 1.5rem */
+    margin-bottom: 1.2rem;
+  }
+
+  .pricing-feature {
+    font-size: 0.82rem;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .pricing-feature-icon,
+  .pricing-feature-icon-adult {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .pricing-btn-student,
+  .pricing-btn-adult {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* ---------- совсем маленькие телефоны (<= 360px) ---------- */
+@media (max-width: 360px) {
+  .pricing-card {
+    padding: 1.15rem 0.9rem;
+    @media (max-width: 430px) { .pricing-card { padding-top: 2.2rem; } }
+  }
+
+  .pricing-amount-student,
+  .pricing-amount-adult {
+    font-size: 2.35rem;
+  }
+
+  .pricing-features {
+    padding: 0.9rem;
+  }
+}
+

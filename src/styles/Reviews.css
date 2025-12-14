@@ -542,3 +542,122 @@
     height: 2.5rem;
   }
 }
+
+
+/* ========== FIX: базовые вещи, чтобы секция не ломала поток ========== */
+.reviews-section {
+  /* сейчас у тебя display:flex + min-height:100vh -> на мобиле это часто мешает */
+  display: block;
+  min-height: auto;
+  padding: 4rem 0 6rem;
+}
+
+/* контейнер сейчас слишком узкий из-за padding 0 3rem */
+.reviews-container {
+  padding: 0 1.25rem;
+}
+
+/* чтобы absolute-карточки не выпирали и не наезжали на "учителя" */
+.reviews-slider {
+  min-height: 520px; /* можно подправить если текста много */
+}
+
+/* ========== МОБИЛКА: iPhone X–14 Pro Max (390px тоже тут) ========== */
+@media (max-width: 430px) {
+  .reviews-section {
+   padding: 1rem 0 7.5rem; /* уменьшаем верхний padding, чтобы блок поднялся вверх */
+  }
+
+  .reviews-container {
+    padding: 0 0.9rem; /* ещё шире карточка */
+  }
+
+  .reviews-header {
+    margin-bottom: 2.2rem;
+  }
+
+  .reviews-title {
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+
+  .reviews-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* карточка почти на всю ширину */
+  .review-card {
+    width: calc(100% - 0px);
+    max-width: 100%;
+    padding: 1.4rem 1.15rem;
+    border-radius: 1.25rem;
+  }
+
+  /* контент компактнее и читабельнее */
+  .review-content {
+    gap: 1.15rem;
+  }
+
+  .review-photo {
+    width: 5.6rem;
+    height: 5.6rem;
+  }
+
+  .review-achievement {
+    font-size: 0.8rem;
+    padding: 0.45rem 1rem;
+  }
+
+  /* ключ: нормальный текст, не столбиком */
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0;
+    margin-bottom: 1rem;
+
+    text-align: left;        /* чтобы не было "лесенки" по центру */
+    overflow-wrap: anywhere; /* если вдруг длинные слова/ссылки */
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .review-author {
+    font-size: 1.1rem;
+  }
+
+  .review-course-badge {
+    font-size: 0.8rem;
+  }
+
+  /* навигацию ближе и меньше */
+  .reviews-navigation {
+    margin-top: 2rem;
+  }
+
+  .reviews-nav-btn {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .reviews-dots {
+    gap: 0.5rem;
+  }
+
+  .reviews-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
+  .reviews-dot-active {
+    width: 2rem;
+  }
+}
+
+/* ========== ещё один важный фикс: если отзывы "липнут" к учителю ========== */
+/* добавь отступ сверху у секции учителя (или у блока teacher-center) */
+@media (max-width: 430px) {
+  #Teacher,
+  .teacher-center {
+    margin-top: -8rem;
+  }
+}

@@ -480,42 +480,43 @@
 /* ---------- <= 768px (планшет вертик / большие телефоны) ---------- */
 @media (max-width: 768px) {
   .hero {
-    padding: 1rem 3rem boxShadowedbackground: linear-gradient(to right, #ec4899, #06b6d4);
-   
+    top: 0;
+    padding: 4.5rem 1rem 2.5rem;
   }
-
 
   .hero-inner {
     max-width: 100%;
-    padding: 3.5rem 1.25rem 3rem;
+    padding: 2.2rem 1.1rem 2.2rem;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .hero-text {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .hero-buttons {
     flex-direction: column;
-   
+    gap: 0.75rem;
   }
 
-  /* флаг поменьше и ближе к центру */
   .hero-german-flag {
     width: 80px;
     height: 50px;
-    top: 1%;
+    top: 6%;
     right: 4%;
   }
 
-  /* учитель тоже меньше */
   .hero-teacher-silhouette {
     width: 85px;
     height: 125px;
@@ -529,7 +530,6 @@
     font-size: 0.8rem;
   }
 
-  /* оставляем 2 бейджа поближе к карточке, остальные убираем */
   .hero-float-1 {
     top: 26%;
     left: 6%;
@@ -546,27 +546,29 @@
     display: none;
   }
 
-  /* орбы ещё мягче, чтобы не отвлекали */
   .hero-orb-2,
   .hero-orb-3 {
     opacity: 0.5;
   }
-}
+} /* ✅ ВОТ ЭТОЙ СКОБКИ У ТЕБЯ НЕ ХВАТАЛО */
+
 
 /* ---------- <= 480px (телефоны) ---------- */
 @media (max-width: 480px) {
   .hero {
     padding: 4.5rem 1rem 2.5rem;
+    top: 40px;
+    
   }
 
   .hero-inner {
     padding: 3rem 1rem 2.5rem;
+    
   }
 
   .hero-title {
     font-size: 1.8rem;
   }
-
   .hero-subtitle {
     font-size: 0.9rem;
   }
@@ -575,7 +577,6 @@
     font-size: 0.85rem;
   }
 
-  /* минималистичный набор эффектов на мобилке */
   .hero-german-flag {
     width: 80px;
     height: 55px;
@@ -583,12 +584,10 @@
     right: 4%;
   }
 
-  /* учителя убираем совсем, чтобы не мешал */
   .hero-teacher-silhouette {
     display: none;
   }
 
-  /* оставляем только один бейдж справа от карточки */
   .hero-floating-icon {
     font-size: 0.75rem;
   }
@@ -609,7 +608,6 @@
     display: none;
   }
 
-  /* орбы и звезды сильно приглушаем */
   .hero-orb-1,
   .hero-orb-2,
   .hero-orb-3 {
@@ -684,5 +682,103 @@
   50% {
     opacity: 0.3;
     transform: scale(0.8);
+  }
+}
+
+
+/* iPhone X–14 Pro Max и все телефоны */
+@media (max-width: 430px) {
+  .reviews-section {
+    min-height: auto;          /* убираем 100vh, иначе центрирование ломает */
+    align-items: flex-start;   /* чтобы секция начиналась сверху */
+    padding: 4rem 0 5rem;
+  }
+
+  .reviews-container {
+    padding: 0 1rem;           /* было 3rem — на телефоне это слишком */
+  }
+
+  .reviews-header {
+    margin-bottom: 2rem;
+  }
+
+  .reviews-title {
+    font-size: 2rem;
+    line-height: 1.05;
+  }
+
+  .reviews-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .reviews-slider {
+    min-height: 520px;         /* чтобы absolute-карточка помещалась */
+  }
+
+  .review-card {
+    width: 100%;               /* было 80% */
+    max-width: 100%;
+    padding: 1.4rem 1.1rem;    /* было 2.75rem 3rem */
+    border-radius: 1.25rem;
+  }
+
+  .review-content {
+    gap: 1.2rem;
+  }
+
+  .review-photo {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .review-achievement {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.55rem;
+    padding: 0;                /* убираем лишние поля */
+    margin-bottom: 1rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* кавычки уменьшаем, иначе они визуально "давят" на текст */
+  .review-text::before,
+  .review-text::after {
+    font-size: 2rem;
+  }
+
+  .review-text::before {
+    top: -0.6rem;
+    left: -0.2rem;
+  }
+
+  .review-text::after {
+    bottom: -1.2rem;
+    right: -0.2rem;
+  }
+
+  .review-author {
+    font-size: 1.05rem;
+  }
+
+  .reviews-navigation {
+    margin-top: 2rem;
+  }
+
+  .reviews-dots {
+    gap: 0.5rem;
+  }
+
+  .reviews-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+
+  .reviews-dot-active {
+    width: 2rem;
   }
 }
