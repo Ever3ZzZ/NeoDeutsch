@@ -1,0 +1,409 @@
+/* ====== ЗАГОЛОВКИ ====== */
+.CoursesPrices {
+  background: linear-gradient(to right, #ec4899, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  margin-bottom: 70px;
+}
+
+.OurCourses {
+  background: linear-gradient(to right, #ec4899, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+}
+
+/* ====== GRID КУРСОВ ====== */
+.courses-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 270px));
+  gap: 24px;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 24px 16px;
+  grid-template-columns: repeat(4, 1fr);
+  background: transparent;
+  background-image: none;
+  border-radius: 24px;
+}
+
+/* мягкие светящиеся орбы на фоне */
+.courses-grid::before,
+.courses-grid::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(60px);
+  opacity: 0.9;
+  animation: pulse-orb 7s ease-in-out infinite;
+}
+
+.courses-grid::before {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  left: 10%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.55), transparent 60%);
+}
+
+.courses-grid::after {
+  width: 220px;
+  height: 220px;
+  bottom: -60px;
+  right: 8%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.55), transparent 60%);
+}
+
+@keyframes pulse-orb {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* ====== КАРТОЧКА КУРСА ====== */
+.course-card {
+  z-index: 1;
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  border: 1px solid rgba(6, 182, 212, 0.32);
+  box-shadow:
+    0 0 25px rgba(6, 182, 212, 0.12),
+    0 0 35px rgba(168, 85, 247, 0.18);
+  color: #e5e7eb;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+/* hover – лёгкий подъём и усиленный неоновый свет */
+.course-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6, 182, 212, 0.7);
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow:
+    0 0 30px rgba(6, 182, 212, 0.35),
+    0 0 40px rgba(168, 85, 247, 0.35);
+}
+
+/* ====== БЕЙДЖ УРОВНЯ ====== */
+.level-badge {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+
+  background: linear-gradient(to right, #a855f7, #ec4899, #06b6d4);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.7);
+  color: #f9fafb;
+}
+
+.level-badge.a1 {
+  background: linear-gradient(135deg, #a855f7, #06b6d4);
+}
+.level-badge.a2 {
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+}
+.level-badge.b1 {
+  background: linear-gradient(135deg, #f97316, #ec4899);
+}
+.level-badge.b2 {
+  background: linear-gradient(135deg, #06b6d4, #6366f1);
+}
+
+/* ====== ТЕКСТЫ ====== */
+.course-title {
+  margin: 2px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(to right, #e5e7eb, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.course-subtitle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #a5b4fc;
+}
+
+.course-desc {
+  min-height: 75px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #d1d5db;
+}
+
+.course-desc + .course-desc {
+  margin-top: 4px;
+}
+
+/* ====== БЛОК "СКЛАДНІСТЬ" ====== */
+.difficulty-box {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  font-size: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.difficulty-box > span:first-child {
+  color: #e5efff;
+  font-weight: 500;
+}
+
+.difficulty-box > span:last-child {
+  align-self: flex-end;
+  color: #7dd3fc;
+  font-weight: 500;
+}
+
+.progress {
+  width: 100%;
+  height: 5px;
+  border-radius: 999px;
+  background: #020617;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(to right, #a855f7, #ec4899, #06b6d4);
+}
+
+/* ====== НИЖНИЕ ИКОНКИ ====== */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.card-info > div {
+  flex: 1;
+  padding: 6px 4px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(51, 131, 196, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #dbeafe;
+}
+
+.card-info span {
+  font-size: 15px;
+}
+
+/* ====== КНОПКА "ДЕТАЛЬНІШЕ" ====== */
+.more-btn {
+  margin-top: 12px;
+  width: 100%;
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+
+  border: 1px solid rgba(148, 163, 253, 0.9);
+  background: transparent;
+  color: #e5e7eb;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.more-btn:hover {
+  background: rgba(30, 64, 175, 0.9);
+  border-color: #e5e7eb;
+  color: #f9fafb;
+  box-shadow: 0 0 22px rgba(59, 130, 246, 0.6);
+}
+
+/* disabled состояние (для B2) */
+.more-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(75, 85, 99, 0.8);
+  box-shadow: none;
+}
+
+/* ====== ДЕТАЛИ (РАСКРЫТИЕ) ====== */
+.details {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(96, 165, 250, 0.6);
+  font-size: 13px;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.details h4 {
+  margin: 2px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.details ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.details li {
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+
+/* ====== АДАПТИВ ====== */
+@media (max-width: 1100px) {
+  .courses-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  }
+}
+
+@media (max-width: 700px) {
+  .courses-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+.OurCourses,
+.CoursesPrices {
+  font-size: 50px;
+}
+
+.course-title {
+  font-size: 30px;
+}
+
+.course-subtitle {
+  font-size: 17px;
+}
+
+.course-desc {
+  font-size: 15px;
+}
+
+.difficulty-box {
+  font-size: 16px;
+}
+
+.card-info {
+  font-size: 18px;
+}
+
+.card-info span {
+  font-size: 20px;
+}
+
+.more-btn {
+  font-size: 18px;
+}
+
+.details {
+  font-size: 16px;
+}
+
+.details h4 {
+  font-size: 22px;
+}
+
+.level-badge {
+  font-size: 18px;
+  padding: 10px 18px;
+}
+/* ====== B2: КУРС У РОЗРОБЦІ ====== */
+
+.course-card--disabled {
+  position: relative;
+  overflow: hidden;
+  cursor: not-allowed;
+}
+
+/* отключаем подъём на hover */
+.course-card--disabled:hover {
+  transform: none;
+  border-color: rgba(148, 163, 253, 0.5);
+  box-shadow:
+    0 0 18px rgba(148, 163, 253, 0.35),
+    0 0 26px rgba(15, 23, 42, 0.9);
+}
+
+/* затемнение поверх контента */
+.course-card--disabled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+
+/* приглушаем текст под затемнением */
+.course-card--disabled .course-title,
+.course-card--disabled .course-subtitle,
+.course-card--disabled .course-desc,
+.course-card--disabled .card-info,
+.course-card--disabled .difficulty-box {
+  opacity: 0.4;
+}
+
+/* мобильная подстройка крестика/бейджа */
+@media (max-width: 640px) {
+  .course-disabled-cross {
+    inset: 16px;
+  }
+
+  .course-disabled-cross::before,
+  .course-disabled-cross::after {
+    border-top-width: 1.5px;
+  }
+
+  .course-card--disabled::after {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+}

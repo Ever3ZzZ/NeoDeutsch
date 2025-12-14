@@ -1,0 +1,688 @@
+/* ===== HERO (твоя база, чуть расширена) ===== */
+
+.hero {
+  position: relative;
+  top: 5rem;
+  padding: 7rem 1.5rem 5rem;
+  display: block; /* Важно */
+   
+  overflow: hidden;  /* чтобы орбы не торчали за пределы */
+}
+
+/* лёгкая «карточка» по центру, чтобы текст читался на неоновом фоне */
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 2.8rem;
+  z-index: 30;
+  position: relative;
+
+  border-radius: 24px;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8));
+  border: 1px solid rgba(148, 163, 253, 0.3);
+  box-shadow:
+    0 0 30px rgba(6, 182, 212, 0.25),
+    0 0 60px rgba(168, 85, 247, 0.28);
+}
+
+/* логотип + текст NeoDeutsch */
+.hero-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero-logo-icon {
+  width: 32px;
+  height: 32px;
+  color: #a855f7;
+  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.7));
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: linear-gradient(to right, #a855f7, #ec4899, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title span {
+  /* небольшой акцент на "Deutsch" */
+  background: linear-gradient(to right, #ec4899, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* подзаголовок */
+.hero-subtitle {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* основной текст */
+.hero-text {
+  margin: 0 auto 1.8rem;
+  max-width: 42rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+/* кнопки */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  min-width: 180px;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+/* фиолетово-розовый градиент */
+.hero-btn-primary {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(236, 72, 153, 0.6);
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.8);
+}
+
+/* светлая вторичная кнопка */
+.hero-btn-secondary {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(226, 232, 255, 0.7);
+  box-shadow: 0 0 18px rgba(148, 163, 253, 0.45);
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(15, 23, 42, 1);
+  box-shadow: 0 0 26px rgba(148, 163, 253, 0.7);
+  transform: translateY(-2px);
+}
+
+/* адаптив */
+@media (max-width: 640px) {
+  .hero-inner {
+    padding: 2rem 1.4rem 2.3rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+}
+
+/* ===== ДОБАВЛЕННЫЕ ЭФФЕКТЫ ИЗ ФИГМЫ ===== */
+
+/* фон и неоновая сетка */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #030712, rgba(88, 28, 135, 0.2), #030712);
+  z-index: 0;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(168, 85, 247, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 1;
+}
+
+/* орбы */
+.hero-orb-1,
+.hero-orb-2,
+.hero-orb-3 {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  animation: pulse 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.hero-orb-1 {
+  top: 5rem;
+  left: 5rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(147, 51, 234, 0.3);
+}
+
+.hero-orb-2 {
+  bottom: 5rem;
+  right: 5rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(219, 39, 119, 0.2);
+  animation-delay: 1s;
+}
+
+.hero-orb-3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16rem;
+  height: 16rem;
+  background: rgba(8, 145, 178, 0.2);
+  animation-delay: 2s;
+}
+
+/* немецкий флаг */
+.hero-german-flag {
+  position: absolute;
+  top: 10%;
+  right: 8%;
+  width: 180px;
+  height: 120px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.4);
+  border: 2px solid rgba(168, 85, 247, 0.5);
+  z-index: 5;
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.flag-stripe {
+  width: 100%;
+  height: 33.33%;
+  position: relative;
+}
+
+.flag-black {
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+  box-shadow: inset 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.flag-red {
+  background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+  box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.flag-gold {
+  background: linear-gradient(135deg, #ffce00 0%, #d4a600 100%);
+  box-shadow: inset 0 0 20px rgba(255, 206, 0, 0.5);
+}
+
+/* силуэт учителя */
+.hero-teacher-silhouette {
+ 
+  position: absolute;
+  bottom: 10%;
+  left: 3.5%;
+  width: 150px;
+  height: 220px;
+  z-index: 10;
+  animation: teacherFloat 5s ease-in-out infinite;
+}
+
+.teacher-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.6));
+  transform: scaleX(-1);
+}
+
+.teacher-part {
+  fill: rgba(168, 85, 247, 0.3);
+  stroke: #a855f7;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.8));
+}
+
+.teacher-arm-left {
+  animation: armWave 2s ease-in-out infinite;
+  transform-origin: 65px 75px;
+}
+
+.teacher-pointer {
+  stroke: #ec4899;
+  stroke-width: 3;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.8));
+}
+
+/* плавающие иконки */
+.hero-floating-icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hero-floating-icon {
+  position: absolute;
+  padding: 1rem;
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(8px);
+  color: #a855f7;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.hero-float-1 {
+  top: 20%;
+  left: 12%;
+  animation: floatRotate 8s ease-in-out infinite;
+}
+
+.hero-float-2 {
+  top: 15%;
+  left: 25%;
+  animation: floatRotate 7s ease-in-out infinite;
+  animation-delay: 2s;
+  color: #ec4899;
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+.hero-float-3 {
+  top: 30%;
+  right: 15%;
+  animation: floatRotate 9s ease-in-out infinite;
+  animation-delay: 4s;
+  color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+.hero-float-4 {
+  bottom: 30%;
+  left: 10%;
+  animation: floatRotate 6s ease-in-out infinite;
+  animation-delay: 1s;
+  color: #f9a8d4;
+  border-color: rgba(249, 168, 212, 0.4);
+  box-shadow: 0 0 20px rgba(249, 168, 212, 0.3);
+}
+
+/* звёзды */
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* адаптив для эффектов */
+/* ---------- <= 1200px (ноуты) ---------- */
+@media (max-width: 1200px) {
+  .hero-inner {
+    max-width: 680px;
+    padding: 5rem 1.5rem 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero-german-flag {
+    width: 150px;
+    height: 100px;
+    top: 14%;
+    right: 6%;
+  }
+
+  .hero-teacher-silhouette {
+    width: 130px;
+    height: 190px;
+    bottom: 8%;
+    left: 6%;
+  }
+
+  .hero-floating-icon {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-float-1 {
+    top: 22%;
+    left: 10%;
+  }
+
+  .hero-float-2 {
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-float-3 {
+    top: 26%;
+    right: 12%;
+  }
+
+  .hero-float-4 {
+    bottom: 18%;
+    left: 12%;
+  }
+}
+
+/* ---------- <= 1024px (планшеты горизонт / маленькие ноуты) ---------- */
+@media (max-width: 1024px) {
+  .hero-inner {
+    max-width: 640px;
+    padding: 4.5rem 1.25rem 3.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-german-flag {
+    width: 130px;
+    height: 85px;
+    top: 12%;
+    right: 5%;
+  }
+
+  .hero-teacher-silhouette {
+    width: 110px;
+    height: 165px;
+    bottom: 7%;
+    left: 5%;
+  }
+
+  .hero-floating-icon {
+    padding: 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-float-1 {
+    top: 23%;
+    left: 8%;
+  }
+
+  .hero-float-2 {
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-float-3 {
+    top: 22%;
+    right: 6%;
+  }
+
+  .hero-float-4 {
+    bottom: 16%;
+    left: 9%;
+  }
+
+  /* орбы чуть меньше, чтобы не забивать фон */
+  .hero-orb-1,
+  .hero-orb-2,
+  .hero-orb-3 {
+    filter: blur(50px);
+  }
+}
+
+/* ---------- <= 768px (планшет вертик / большие телефоны) ---------- */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1rem 3rem boxShadowedbackground: linear-gradient(to right, #ec4899, #06b6d4);
+   
+  }
+
+
+  .hero-inner {
+    max-width: 100%;
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+   
+  }
+
+  /* флаг поменьше и ближе к центру */
+  .hero-german-flag {
+    width: 80px;
+    height: 50px;
+    top: 1%;
+    right: 4%;
+  }
+
+  /* учитель тоже меньше */
+  .hero-teacher-silhouette {
+    width: 85px;
+    height: 125px;
+    bottom: 6%;
+    left: 4%;
+    top: 2%;
+  }
+
+  .hero-floating-icon {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* оставляем 2 бейджа поближе к карточке, остальные убираем */
+  .hero-float-1 {
+    top: 26%;
+    left: 6%;
+  }
+
+  .hero-float-2 {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-float-3,
+  .hero-float-4 {
+    display: none;
+  }
+
+  /* орбы ещё мягче, чтобы не отвлекали */
+  .hero-orb-2,
+  .hero-orb-3 {
+    opacity: 0.5;
+  }
+}
+
+/* ---------- <= 480px (телефоны) ---------- */
+@media (max-width: 480px) {
+  .hero {
+    padding: 4.5rem 1rem 2.5rem;
+  }
+
+  .hero-inner {
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-text {
+    font-size: 0.85rem;
+  }
+
+  /* минималистичный набор эффектов на мобилке */
+  .hero-german-flag {
+    width: 80px;
+    height: 55px;
+    top: 9%;
+    right: 4%;
+  }
+
+  /* учителя убираем совсем, чтобы не мешал */
+  .hero-teacher-silhouette {
+    display: none;
+  }
+
+  /* оставляем только один бейдж справа от карточки */
+  .hero-floating-icon {
+    font-size: 0.75rem;
+  }
+
+  .hero-float-1 {
+    display: none;
+  }
+
+  .hero-float-2 {
+    top: 34%;
+    left: auto;
+    right: 6%;
+    transform: none;
+  }
+
+  .hero-float-3,
+  .hero-float-4 {
+    display: none;
+  }
+
+  /* орбы и звезды сильно приглушаем */
+  .hero-orb-1,
+  .hero-orb-2,
+  .hero-orb-3 {
+    opacity: 0.3;
+    filter: blur(45px);
+  }
+
+  .hero-stars {
+    opacity: 0.4;
+  }
+}
+
+
+/* ===== АНИМАЦИИ ===== */
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes teacherFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes armWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes floatRotate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
