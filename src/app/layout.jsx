@@ -3,17 +3,16 @@ import Footer from '../components/Footer';
 import "./globals.css";
 
 export const metadata = {
-  title: 'NeoDeutsch',
-  description: 'Онлайн школа немецкого языка',
+  title: 'NeoDeutsch — онлайн школа немецкого языка',
+  description: 'Онлайн школа немецкого языка A1–B2',
+  verification: {
+    google: 'SMuZj6QFoeW57BuWKLMJcIQTGnJ2Y79Yiqq-tOtbM3c',
+  },
 };
 
-export default function layout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="ru">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body>
         <Header />
         <main>{children}</main>
