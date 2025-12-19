@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: 'NeoDeutsch — онлайн школа немецкого языка',
@@ -17,6 +18,9 @@ export default function Layout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+
+         {/* ВАЖНО: analytics должен быть тут */}
+        <Analytics />
       </body>
     </html>
   );
