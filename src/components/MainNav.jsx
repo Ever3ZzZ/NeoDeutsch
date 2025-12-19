@@ -37,7 +37,7 @@ export default function MainNav() {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://www.instagram.com/deutsch6926/', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/neodeutsch?igsh=ZDZoM2VndTlsMXYy&utm_source=qr', label: 'Instagram' },
     { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61584487925853', label: 'Facebook' },
     { icon: Send, href: 'https://t.me/Neo_Deutsch', label: 'Telegram' },
   ];

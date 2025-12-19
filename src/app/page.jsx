@@ -137,41 +137,42 @@ export default function HomePage() {
       <div className="stats">
         {/* первая строка */}
         <div className="stat-card">
+          <span className="stat-number">2025-2026</span>
+          <span className="stat-label">Дистанційне навчання</span>
+        </div>
+
+        <div className="stat-card">
           <span className="stat-number">100+</span>
           <span className="stat-label">Успішних студентів</span>
         </div>
 
         <div className="stat-card">
           <span className="stat-number">10+</span>
-          <span className="stat-label">Кваліфікованих викладачів</span>
-        </div>
-
-        <div className="stat-card">
-          <span className="stat-number">2</span>
-          <span className="stat-label">Роки на ринку освіти</span>
+          <span className="stat-label">людей у команді</span>
+         
         </div>
 
         {/* вторая строка с эмодзи / картинками */}
         <div className="stat-card">
           <img className="stat-photo" src="boy.png" alt="boy" />
           <span className="stat-label">
-            Вчимо дорослих та детей з 8 років<br />
-            — швидко, з драйвом та результативно.
+            Вчимо дорослих та дітей з 8 років.<br />
+            — Швидко, з драйвом та результативно.
           </span>
         </div>
 
         <div className="stat-card">
           <img className="stat-photo" src="NeoRocket.png" alt="Rocket" />
           <span className="stat-label">
-            Піднімаємо рівень з А1 до В2 за рік<br />
-            без паніки, поступово та без мовчання.
+            Піднімаємо рівень з А1 до В2 за рік.<br />
+            без паніки, еффективно та без мовчання.
           </span>
         </div>
 
         <div className="stat-card">
           <img className="stat-photo" src="Stars.png" alt="stars" />
           <span className="stat-label">
-            Після А2 ви вже говорите по німецьки<br />
+            Після А2 ви вже говорите по німецьки.<br />
             Не тупо вчите, а реально використовуєте мову.
           </span>
         </div>
