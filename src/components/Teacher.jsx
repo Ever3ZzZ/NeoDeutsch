@@ -69,7 +69,7 @@ export default function Teacher() {
                     <div className="teacher-detail-label">
                       Досвід викладання
                     </div>
-                    <div className="teacher-detail-value">6 років</div>
+                    <div className="teacher-detail-value">9 років</div>
                     <div className="teacher-detail-subvalue">
                       Онлайн та офлайн формати
                     </div>
@@ -85,40 +85,8 @@ export default function Teacher() {
                       Рівні A1–B1, підготовка до DTZ / Goethe
                     </div>
                     <div className="teacher-detail-subvalue">
-                      Дорослі та підлітки від 14 років
+                      Дорослі та підлітки від 10 років
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* опыт работы */}
-              <div className="teacher-experience">
-                <div className="teacher-experience-title">Досвід роботи</div>
-
-                <div className="teacher-experience-item">
-                  <div className="teacher-experience-role">
-                    Онлайн-репетитор німецької
-                  </div>
-                  <div className="teacher-experience-period">
-                    2019 – теперішній час
-                  </div>
-                </div>
-
-                <div className="teacher-experience-item">
-                  <div className="teacher-experience-role">
-                    Спеціалізована школа з англійської та німецької
-                  </div>
-                  <div className="teacher-experience-period">
-                    2020 – 2023
-                  </div>
-                </div>
-
-                <div className="teacher-experience-item">
-                  <div className="teacher-experience-role">
-                    Приватна гімназія A+
-                  </div>
-                  <div className="teacher-experience-period">
-                    2023 – 2024
                   </div>
                 </div>
               </div>
@@ -126,10 +94,8 @@ export default function Teacher() {
               {/* цитата */}
               <div className="teacher-quote">
                 <p className="teacher-quote-text">
-                  Моя мета — зробити вивчення німецької мови цікавим та
-                  ефективним. Я використовую сучасні методики та створюю
-                  комфортну атмосферу для навчання, щоб кожен студент міг
-                  досягти своїх цілей.
+                  Для мене німецька — це не про зубріння, а про живе спілкування.
+Я створюю атмосферу, в якій не страшно говорити й робити помилки, і саме це дає найбільший результат.
                 </p>
               </div>
             </div>

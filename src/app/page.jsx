@@ -4,6 +4,9 @@ import Container from '../components/Container';
 import '../styles/StatsCard.css';
 import '../styles/page.css';
 
+import "../styles/TrialLessonNudge.css";
+
+import TrialLessonNudge from '../components/TrialLessonNudge';
 import Courses from '../components/Courses';
 import Prices from '../components/Prices';
 import Schedule from '../components/Schedule';
@@ -28,7 +31,7 @@ export default function HomePage() {
         <div className="hero-orb-3" />
 
         {/* немецкий флаг */}
-        <div className="hero-german-flag">
+        {/*<div className="hero-german-flag">
           <div className="flag-stripe flag-black" />
           <div className="flag-stripe flag-red" />
           <div className="flag-stripe flag-gold" />
@@ -71,14 +74,14 @@ export default function HomePage() {
         {/* плавающие бейджи */}
         <div className="hero-floating-icons">
           <div className="hero-floating-icon hero-float-1">
-            🧠 A1 → B1 за рік
+            🧠 A1 → B2 за рік
           </div>
-          <div className="hero-floating-icon hero-float-2">
+          {/*<div className="hero-floating-icon hero-float-2">
             🎧 Розмовна практика
           </div>
-          <div className="hero-floating-icon hero-float-3">
+          {/*<div className="hero-floating-icon hero-float-3">
             🎓 Підготовка до іспитів
-          </div>
+          </div>*/}
           <div className="hero-floating-icon hero-float-4">
             💬 Живі онлайн-уроки
           </div>
@@ -121,14 +124,12 @@ export default function HomePage() {
           </h2>
 
           <p className="hero-text">
-            Опануйте німецьку мову з професійними викладачами. Сучасні
-            методики навчання, індивідуальний підхід та гарантований
-            результат.
+            Курс від А1 до Б2 всього за рік по нашій унікальній методиці. 
           </p>
 
           <div className="hero-buttons">
             <button className="hero-btn hero-btn-primary" onClick={() => document.getElementById('form').scrollIntoView({ behavior: 'smooth' })}>⚡ Пробний урок</button>
-            <button className="hero-btn hero-btn-secondary" onClick={() => document.getElementById('courses').scrollIntoView({ behavior: 'smooth' })}>Дізнатись більше</button>
+            <button className="hero-btn hero-btn-secondary" onClick={() => document.getElementById('courses').scrollIntoView({ behavior: 'smooth' })}>Дивитися курси</button>
           </div>
         </div>
       </section>
@@ -136,44 +137,33 @@ export default function HomePage() {
       {/* STATS */}
       <div className="stats">
         {/* первая строка */}
-        <div className="stat-card">
-          <span className="stat-number">2025-2026</span>
-          <span className="stat-label">Дистанційне навчання</span>
-        </div>
-
-        <div className="stat-card">
-          <span className="stat-number">100+</span>
-          <span className="stat-label">Успішних студентів</span>
-        </div>
-
-        <div className="stat-card">
-          <span className="stat-number">10+</span>
-          <span className="stat-label">людей у команді</span>
-         
-        </div>
+        
 
         {/* вторая строка с эмодзи / картинками */}
-        <div className="stat-card">
+                <div className="stat-card">
           <img className="stat-photo" src="boy.png" alt="boy" />
           <span className="stat-label">
-            Вчимо дорослих та дітей з 8 років.<br />
-            — Швидко, з драйвом та результативно.
+            <strong>Вчимо дорослих та дітей з 8 років.</strong><br />
+            Онлайн-навчання у невеликих групах з живим викладачем.<br />
+            <em>Швидко, з драйвом та результативно, без нудних правил і заучування.</em>
           </span>
         </div>
 
         <div className="stat-card">
           <img className="stat-photo" src="NeoRocket.png" alt="Rocket" />
           <span className="stat-label">
-            Піднімаємо рівень з А1 до В2 за рік.<br />
-            без паніки, еффективно та без мовчання.
+            <strong>Піднімаємо рівень з А1 до В2 за рік.</strong><br />
+            Навчання з акцентом на розмовну практику, регулярні заняття та підтримку викладача.<br />
+            <em>Без паніки, ефективно та без мовчання — ви починаєте говорити з перших тижнів.</em>
           </span>
         </div>
 
         <div className="stat-card">
           <img className="stat-photo" src="Stars.png" alt="stars" />
           <span className="stat-label">
-            Після А2 ви вже говорите по німецьки.<br />
-            Не тупо вчите, а реально використовуєте мову.
+            <strong>Після А2 ви вже говорите по німецьки.</strong><br />
+            Ви можете спілкуватися у повсякденних ситуаціях: робота, документи, життя в Німеччині.<br />
+            <em>Не просто вчите правила, а реально використовуєте мову на практиці.</em>
           </span>
         </div>
       </div>
@@ -212,6 +202,7 @@ export default function HomePage() {
 
       {/* FOOTER */}
       
+      <TrialLessonNudge />
     </Container>
   );
 }

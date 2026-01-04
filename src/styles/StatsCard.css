@@ -8,6 +8,16 @@
   margin: 40px auto;
 }
 
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 32px;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 48px; /* контролируем расстояние до "Наші курси" */
+}
+
+
 /* Карточка */
 .stat-card {
   background: rgba(10, 10, 30, 0.7);

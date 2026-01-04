@@ -14,22 +14,25 @@ export default function Prices() {
 
         {/* Заголовок */}
         <h3 className="pricing-title-student">Для студентів</h3>
+         
+        
         <p className="pricing-description"></p>
 
         {/* Блок "підходить для..." */}
         <div className="pricing-requirement">
           <span>🎓 Підходить для школярів та студентів, до 18 років та після</span>
+          
         </div>
 
         {/* Цены */}
         <div className="pricing-amount-container">
-          <div className="pricing-amount-old">6500 грн</div>
+          <div className="pricing-amount-old">7000 грн</div>
           <div className="pricing-amount-student">5999 грн</div>
         </div>
 
         {/* Бейдж скидки */}
         <div className="pricing-discount-badge">
-          Знижка 501 грн!
+           Новорічна знижка 1001 грн до 1 березня 🎅
         </div>
 
         <p className="pricing-period">за курс</p>
@@ -37,9 +40,15 @@ export default function Prices() {
         {/* Список преимуществ */}
         <div className="pricing-features">
           <div className="pricing-feature">
-            <span className="pricing-feature-icon">✔</span>
-            <span>Всі рівні (A1–B2)</span>
+            
+            <span>✔️ 1 рівень (A1 або A2 або B1) </span>
           </div>
+
+          <div className="pricing-feature">
+            
+            <span>✔️ Повний шлях A1 → B1 = 18 000 грн</span>
+          </div>
+          
           <div className="pricing-feature">
             <span className="pricing-feature-icon">✔</span>
             <span>Особистий словник</span>
@@ -77,13 +86,13 @@ export default function Prices() {
 
         {/* Цены */}
         <div className="pricing-amount-container">
-          <div className="pricing-amount-old">7000 грн</div>
+          <div className="pricing-amount-old">7500 грн</div>
           <div className="pricing-amount-adult">6499 грн</div>
         </div>
 
         {/* Бейдж скидки */}
         <div className="pricing-discount-badge pricing-discount-badge-adult">
-          Знижка 501 грн!
+          Новорічна знижка 1001 грн до 1 березня 🎅
         </div>
 
         <p className="pricing-period">за курс</p>
@@ -91,8 +100,13 @@ export default function Prices() {
         {/* Список преимуществ */}
         <div className="pricing-features">
           <div className="pricing-feature">
-            <span className="pricing-feature-icon-adult">✔</span>
-            <span>Всі рівні (A1–B2)</span>
+            
+            <span>✔️ 1 рівень (A1 або A2 або B1)</span>
+          </div>
+
+          <div className="pricing-feature">
+           
+            <span>✔️ Повний шлях A1 → B1 = 18 000 грн</span>
           </div>
           <div className="pricing-feature">
             <span className="pricing-feature-icon-adult">✔</span>

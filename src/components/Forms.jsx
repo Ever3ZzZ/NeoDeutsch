@@ -12,7 +12,8 @@ export default function Forms() {
     name: "",
     phone: "",
     email: "",
-    level: ""
+    level: "",
+    telegram: ""
   });
 
   const [teacherForm, setTeacherForm] = useState({
@@ -114,7 +115,7 @@ export default function Forms() {
             </div>
 
             <p className="form-description">
-              Запишіться на пробний урок та оцініть якість нашого навчання
+              Не тяни, скоріше запишись на пробний урок та зроби перший крок до вивчення німецької мови!
             </p>
 
             <form onSubmit={handleTrialSubmit} className="form">
@@ -164,7 +165,7 @@ export default function Forms() {
                   value={trialForm.level}
                   onChange={(e) => setTrialForm({ ...trialForm, level: e.target.value })}
                   className="form-input-trial"
-                  placeholder="A1, A2, B1, "
+                  placeholder="A1, A2, B1, B2 "
                 />
               </div>
 
@@ -180,11 +181,11 @@ export default function Forms() {
           <div className="form-card-teacher">
             <div className="form-header">
               <Users className="form-icon-teacher" />
-              <h3 className="form-title-teacher">Приєднатись до команди</h3>
+              <h3 className="form-title-teacher">Форма для вчителів</h3>
             </div>
 
             <p className="form-description">
-              Шукаємо викладачів німецької мови. Станьте частиною нашої команди!
+              Ви викладач німецької мови? Станьте частиною нашої команди!
             </p>
 
             <form onSubmit={handleTeacherSubmit} className="form">

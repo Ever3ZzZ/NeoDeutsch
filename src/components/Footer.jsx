@@ -28,12 +28,12 @@ export default function Footer() {
             <div className="footer-contact-list">
               <div className="footer-contact-item">
                 <Phone className="footer-contact-icon" />
-                <span>+49 152 12817629 🇩🇪 </span>
+                <span>+49 152 12817629 </span>
               </div>
 
               <div className="footer-contact-item">
                 <Mail className="footer-contact-icon" />
-                <span>neodeutsch328@gmail.com</span>
+                <span>deutschneo@gmail.com</span>
               </div>
 
               <div className="footer-contact-item">
